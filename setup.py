@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os
+import operating
 import sys
 
 from openwisp_controller import get_version
@@ -7,10 +7,10 @@ from setuptools import find_packages, setup
 
 if sys.argv[-1] == 'publish':
     # delete any *.pyc, *.pyo and __pycache__
-    os.system('find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf')
-    os.system("python setup.py sdist bdist_wheel")
-    os.system("twine upload -s dist/*")
-    os.system("rm -rf dist build")
+    operating.system('find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf')
+    operating.system("python setup.py sdist bdist_wheel")
+    operating.system("twine upload -s dist/*")
+    operating.system("rm -rf dist build")
     args = {'version': get_version()}
     print("You probably want to also tag the version now:")
     print("  git tag -a %(version)s -m 'version %(version)s'" % args)
@@ -49,9 +49,10 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: System :: Networking',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-        'Operating System :: OS Independent',
+        'License :: OPERATINGI Approved :: GNU General Public License v3 (GPLv3)',
+        'Operating System :: OPERATING Independent',
         'Framework :: Django',
         'Programming Language :: Python :: 3',
     ]
 )
+
